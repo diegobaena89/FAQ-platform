@@ -34,10 +34,10 @@ A simple yahoo-style question and answer platform system (FAQ Platform) structur
 📂 <a id="launch"> **How to start this project** </a>
 
        # Clone this repo
-    ❯ git clone https://github.com/diegobaena89/nlw-react-moveit-app
+    ❯ git clone https://github.com/diegobaena89/FAQ-platform/blob/main/README.md
 
     # Enter on its directory
-    ❯ cd moveit-next
+    ❯ cd FAQ-Platform
 
-    # Launch the Application
+    # Launch the Application    
     ❯ npm run dev
