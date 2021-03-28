@@ -4,8 +4,9 @@ const app = express();
 //estrutura javascript
 const bodyParser = require("body-parser") //require o body-parser
 const connection = require('./database/database');
-//Database
+const Pergunta = require('./database/Pergunta');
 
+//Database
 connection
   .authenticate()
   .then(() => {
@@ -24,9 +25,15 @@ app.use(express.static('public'))//define que quer arquivos estáticos(imagens, 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // rotas
-app.get('/', (req,res) => {
-  res.render('index');
+app.get("/", (req, res) => {
+  Pergunta.findAll({ raw: true }).then(perguntas => {
+    res.render("index", {
+      perguntas: perguntas
+    });
+  })
+
 });
+
 app.get("/perguntar", (req, res) =>{
   res.render("perguntar")
 })
@@ -35,8 +42,15 @@ app.post("/salvarpergunta", (req,res) => {
   //pegando as informações do formulário através do name
   var titulo = req.body.titulo;
   var descricao = req.body.descricao;
-  res.send("Formulário recebido " + titulo + "  "+ " descricao " + descricao);
-})
+  //salva as perguntas no banco de dados
+  Pergunta.create({
+    titulo: titulo,
+    descricao: descricao
+  }).then(()=>{
+    res.redirect("/");
+  })
+});
+
 app.listen(8080, () => {
   console.log("App rodando!");
 });
