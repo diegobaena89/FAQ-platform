@@ -2,8 +2,8 @@
 
 
 ![badge](https://badgen.net/badge/languages/3/:color?)
- ![badge](https://badgen.net/badge/made_by/diegobaena89/:color?) 
- ![badge](https://badgen.net/github/license/micromatch/micromatch) 
+![badge](https://badgen.net/badge/made_by/diegobaena89/:color?) 
+![badge](https://badgen.net/github/license/micromatch/micromatch) 
 
 
 ![FAQ](https://raw.githubusercontent.com/diegobaena89/FAQ-platform/main/faq.gif)
